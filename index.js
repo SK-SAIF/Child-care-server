@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require("mongodb").ObjectID;
 
 require('dotenv').config()
-
+const hostname="0.0.0.0";
 
 const app = express();
 app.use(cors());
