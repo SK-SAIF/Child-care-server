@@ -57,11 +57,22 @@ client.connect(err => {
       res.send(documents);
     })
   })
+
+  //Delete one item
+
+  app.delete('/deleteService/:id',(req,res)=>{
+    ServiceCollection.deleteOne({_id:ObjectID(req.params.id)})
+    .then(result=>{
+      console.log(result);
+    })
+  })
 });
 
 
 app.get('/', (req, res) => {
     res.send('Hello World')
   })
+
+  
   
   app.listen(process.env.PORT || port);
