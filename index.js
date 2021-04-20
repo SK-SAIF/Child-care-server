@@ -65,6 +65,14 @@ client.connect(err => {
       console.log(result);
     })
   })
+
+  //get user specific orders
+  app.get('/getSpecificOrders',(req,res)=>{
+    OrdersCollection.find({email:req.query.email})
+    .toArray((error,documents)=>{
+      res.send(documents);
+    })
+  })
 });
 
 
